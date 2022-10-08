@@ -93,6 +93,10 @@
     text-align:center;
   }
   
+  .small-font {
+    font-size: 1em;
+    text-align:center;
+  }
   .timer {
     height: 240px;
     padding: 10px;
