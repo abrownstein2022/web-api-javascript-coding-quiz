@@ -19,7 +19,7 @@
     margin-top: 20px;
   }
   
-  .win-loss-container {
+  .options-container {
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
@@ -47,34 +47,24 @@
     text-align: center;
     background: #bed8ee;
     color: black;
-    border-bottom:30px #879274;
+    border-bottom:5px #879274;
   }
   
   main {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     justify-content: space-around;
   }
   
   section {
     flex: 0 auto;
-    padding: 8px;
-    margin-top: 50px;
+    padding: 0px;
+    margin-top: 0px;
     background-color: #bed8ee;
-    border-radius: 8px;
+    border-radius: 0px;
   }
   
-  .word-guess {
-    width: 55vw;
-    height: 400px;
-  }
-  
-  .results {
-    width: 30vw;
-    height: 400px;
-  }
-  
-  .card {
+  .outside-container {
     background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,124,33,0.604079131652661) 100%);
     border: 1px solid #eceff1;
     border-radius: 8px;
@@ -82,10 +72,6 @@
       rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
     margin: auto;
     padding: 20px;
-  }
-  
-  .word-blanks {
-    line-height: 360px;
   }
   
   .large-font {
@@ -98,46 +84,18 @@
     text-align:center;
   }
   .timer {
-    height: 240px;
+    height: 2px;
     padding: 10px;
     background: #13293d;
     color: #fff;
-    text-align: center;
+    text-align: right;
   }
   
   .timer-text {
-    padding: 55px;
+    padding: 0px;
   }
   
   @media screen and (max-width: 1183px) {
     main {
       flex-direction: column;
     }
-  
-    .word-guess,
-    .results {
-      width: 90vw;
-    }
-  
-    section {
-      background-color: white;
-      margin: 20px auto;
-      width: 92vw;
-    }
-  }
-  
-  @media screen and (max-width: 504px) {
-    .large-font {
-      font-size: 2em;
-    }
-  
-    .reset-button {
-      font-size: 12px;
-      width: 20ox;
-      
-    }
-  
-    .timer {
-      height: 200px;
-    }
-   
