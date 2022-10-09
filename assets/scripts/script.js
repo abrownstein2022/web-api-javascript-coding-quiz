@@ -1,48 +1,52 @@
-const questions = [{
-    id: 0,
-    q: "Commonly Used data types DO not include:",
-    a: [{ text: "1. strings", isCorrect: false },
-        { text: "2. booleans", isCorrect: false },
-        { text: "3. alerts", isCorrect: true },
-        { text: "4. numbers", isCorrect: false }
-    ]
+const myQuestions = [
+ {
+    question: "Commonly Used data types DO not include:",
+    answers: { 
+      a:  "1. strings", 
+      b:  "2. booleans",
+      c:  "3. alerts",
+      d:  "4. numbers" 
+    },
+    correctAnswer: "c"
 },
 {
-    id: 1,
-    q: "The condition in an if / else statement is enclosed with __________.",
-    a: [{ text: "1. quotes", isCorrect: false },
-        { text: "2. curly brackets", isCorrect: false },
-        { text: "3. parentheses", isCorrect: true },
-        { text: "4. square brackets", isCorrect: false }
-    ]
+    question: "The condition in an if / else statement is enclosed with __________.",
+    answers: { 
+      a:  "1. quotes", 
+      b:  "2. curly brackets",
+      c:  "3. parentheses",
+      d:  "4. square brackets" 
+     },
+     correctAnswer: "c"
+ },
+{
+    question: "Arrays in JavaScript can be used to store ____________.",
+    answers: { 
+            a:  "1. numbers and strings", 
+            b:  "2. other arrays",
+            c:  "3. booleans",
+            d:  "4. all of the above" 
+      },
+      correctAnswer: "d"
 },
 {
-    id: 2,
-    q: "Arrays in JavaScript can be used to store ____________.",
-    a: [{ text: "numbers and strings", isCorrect: false },
-        { text: "other arrays", isCorrect: false },
-        { text: "booleans", isCorrect: false },
-        { text: "all of the above", isCorrect: true }
-    ]
-}
-,
-{
-    id: 3,
-    q: "String values must be enclosed within ____________ when being assigned to variables.",
-    a: [{ text: "commas", isCorrect: false },
-        { text: "curly brackets", isCorrect: false },
-        { text: "quotes", isCorrect: true },
-        { text: "parentheses", isCorrect: false }
-    ]
-}
-,
-{
-    id: 4,
-    q: "A very useful tool used during development and debugging for printing content to the debugger is ____________.",
-    a: [{ text: "JavaScript", isCorrect: false },
-        { text: "terminal/bash", isCorrect: false },
-        { text: "for loops", isCorrect: false },
-        { text: "console log", isCorrect: true }
-    ]
-}
-]
+    question: "String values must be enclosed within ____________ when being assigned to variables.",
+    answers: { 
+            a:  "1. commas", 
+            b:  "2. curly braces",
+            c:  "3. quotes",
+            d:  "4. parentheses" 
+      },
+      correctAnswer: "c"
+ },
+ {
+     question: "A very useful tool used during development and debugging for printing content to the debugger is ____________.",
+     answers: { 
+            a:  "1. JavaScript", 
+            b:  "2. terminal/bash",
+            c:  "3. for loops",
+            d:  "4. console log" 
+      },
+      correctAnswer: "d"
+  },
+];

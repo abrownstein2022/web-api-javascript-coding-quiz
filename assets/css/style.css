@@ -18,15 +18,27 @@
     line-height: 8px;
     margin-top: 20px;
   }
-  
+
+  .very-top-part {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    background: lightyellow;
+    font-size: 25px;
+  }
+
+
   .options-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: 16px;
+ 
+    
   }
   
   button {
-    background: radial-gradient(circle, darkblue 0%, darkblue 100%);
+    background:  rgb(70, 73, 240);
     border-radius: 8px;
     color: white;
     cursor: pointer;
@@ -64,25 +76,25 @@
     border-radius: 0px;
   }
   
-  .outside-container {
-    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,124,33,0.604079131652661) 100%);
+
+.quiz-container,  .initials-container, .high-scores-container {
+    background: radial-gradient(circle, white 0%, white 100%);
     border: 1px solid #eceff1;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
       rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
-    margin: auto;
-    padding: 20px;
+    margin:10px;
+    padding: 10px;
   }
+
+
+  .code-quiz-top {
+  background: white;
   
-  .large-font {
-    font-size: 2.5em;
-    text-align:center;
-  }
   
-  .small-font {
-    font-size: 1em;
-    text-align:center;
-  }
+  } 
+
+
   .timer {
     height: 2px;
     padding: 10px;
@@ -94,8 +106,25 @@
   .timer-text {
     padding: 0px;
   }
+
+  /*hide elements*/
+  .hide {   
+    display: none;
+  }
   
+
+  /*descending selector*/
+  .very-top-part a{
+    width: 80%;
+    text-align: left;
+   }
+ 
+   .very-top-part div{
+    width: 20%; 
+   }
+
   @media screen and (max-width: 1183px) {
     main {
       flex-direction: column;
     }
+  }
