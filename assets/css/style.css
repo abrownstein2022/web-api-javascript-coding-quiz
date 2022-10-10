@@ -11,7 +11,12 @@
     justify-content: flex-start;
     background: #bed8ee;
   }
-  
+
+  /*hide elements to start*/
+    .hide {   
+      display: none;
+    }
+
   .reset-button {
     font-size: 16px;
     height: 30px;
@@ -19,13 +24,23 @@
     margin-top: 20px;
   }
 
-  .very-top-part {
+  /* .very-top-part {
     display: flex;
     margin-top: 16px;
     margin-bottom: 10px;
     background: lightyellow;
     font-size: 25px;
-  }
+  } */
+
+  /*descending selector*/
+  /* .very-top-part a{
+    width: 80%;
+    text-align: left;
+   }
+ 
+   .very-top-part div{
+    width: 20%; 
+   } */
 
 
   .options-container {
@@ -33,10 +48,9 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 16px;
- 
-    
   }
   
+
   button {
     background:  rgb(70, 73, 240);
     border-radius: 8px;
@@ -55,17 +69,29 @@
   }
   
   header {
+    display: flex;
+    justify-content:center;
     padding: 20px;
-    text-align: center;
+    /* text-align: center; */
     background: #bed8ee;
     color: black;
     border-bottom:5px #879274;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  header div{
+    background: white;
+    border-top: 15px;
+    width: 100%;
+
   }
   
   main {
     display: flex;
     flex-wrap:wrap;
     justify-content: space-around;
+    flex-direction: column;
   }
   
   section {
@@ -74,26 +100,18 @@
     margin-top: 0px;
     background-color: #bed8ee;
     border-radius: 0px;
-  }
+  } 
   
 
-.quiz-container,  .initials-container, .high-scores-container {
-    background: radial-gradient(circle, white 0%, white 100%);
+  .start-container,.quiz-container,  .initials-container, .high-scores-container {
+    background: white;
     border: 1px solid #eceff1;
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
       rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
     margin:10px;
     padding: 10px;
-  }
-
-
-  .code-quiz-top {
-  background: white;
-  
-  
   } 
-
 
   .timer {
     height: 2px;
@@ -106,22 +124,6 @@
   .timer-text {
     padding: 0px;
   }
-
-  /*hide elements*/
-  .hide {   
-    display: none;
-  }
-  
-
-  /*descending selector*/
-  .very-top-part a{
-    width: 80%;
-    text-align: left;
-   }
- 
-   .very-top-part div{
-    width: 20%; 
-   }
 
   @media screen and (max-width: 1183px) {
     main {

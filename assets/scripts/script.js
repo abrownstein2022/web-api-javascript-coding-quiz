@@ -50,3 +50,14 @@ const myQuestions = [
       correctAnswer: "d"
   },
 ];
+
+//toggle to display or hide html elements - pass element id
+//so can use this function for all elements
+function displayHideElement(elementName) {
+  var x = document.getElementById(elementName);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
