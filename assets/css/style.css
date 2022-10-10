@@ -52,11 +52,12 @@
   
 
   button {
-    background:  rgb(70, 73, 240);
+    background: lightblue;
     border-radius: 8px;
-    color: white;
+    color: black;
     cursor: pointer;
     font-size: 1em;
+    font-weight: bold;
     letter-spacing: 0.21px;
     line-height: 16px;
     max-width: 255px;
@@ -70,14 +71,16 @@
   
   header {
     display: flex;
-    justify-content:center;
-    padding: 20px;
+    /* justify-content:center; */
+    padding: 30px;
     /* text-align: center; */
-    background: #bed8ee;
+    /* background: #bed8ee; */
     color: black;
     border-bottom:5px #879274;
-    width: 100%;
+    /* width: 100%; */
     font-size: 20px;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
   }
 
   header div{
@@ -100,10 +103,11 @@
     margin-top: 0px;
     background-color: #bed8ee;
     border-radius: 0px;
+  
   } 
   
 
-  .start-container,.quiz-container,  .initials-container, .high-scores-container {
+  .start-container,.quiz-container,  .done-container, .high-scores-container {
     background: white;
     border: 1px solid #eceff1;
     border-radius: 5px;
@@ -113,7 +117,7 @@
     padding: 10px;
   } 
 
-  .timer {
+  /* .timer {
     height: 2px;
     padding: 10px;
     background: #13293d;
@@ -123,7 +127,7 @@
   
   .timer-text {
     padding: 0px;
-  }
+  } */
 
   @media screen and (max-width: 1183px) {
     main {

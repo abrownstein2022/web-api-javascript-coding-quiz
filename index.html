@@ -14,43 +14,40 @@
     <div style="width:95%;">
       <a href="#" onclick='displayHideElement("disp-high-scores")'>View high scores</a>
     </div>
-      <!--span means no carriage return vs div-->
+    <!--span means no carriage return vs div-->
     <div style="width:5%;">
-      Time:<span class="small-font timer-count">0</span>
-    </div>  
+      Time:<span class="timer-text" id="timer-count"></span>
+    </div>
   </header>
 
   <main>
     <section class="start-container">
       <h2>Coding Quiz Challenge</h2>
-     Try to answer the following code-related questions wtihin the time limit.<br>Keep in mind that incorrect
-       answers will penalize your score/time<br>by 10 seconds!
-     <br><button class="start-button">Start Quiz</button>
-   </section>
-    <section>
-      <div class="quiz-container">
-        <div class="question-container" id="question">
-          Question goes here.
-        </div>
-        <div class="options-container">
-          <button class="option" onclick="" id="opt1">option1</button>
-          <button class="option" id="opt2">option2</button>
-          <button class="option" id="opt3">option3</button>
-          <button class="option" id="opt4">option4</button>
-        </div>
-      </div>
-      <div class="initials-container">
-        <h1>All done!</h1>
-        Your final score is <span id="final-score">.</span>
-        <br>Enter initials: <input type="text" id="initials"><button id="submit">Submit</button>
-      </div>
-      <div id="disp-high-scores" class="high-scores-container">
-        <h1>High Scores</h1>
-        <span id="high-scores"></span>
-        <button id="go-back">Go back</button><button id="clear-scores">Clear High Scores</button>
-      </div>
+      Try to answer the following code-related questions wtihin the time limit.<br>Keep in mind that incorrect
+      answers will penalize your score/time<br>by 10 seconds!
+      <br><button class="start-button">Start Quiz</button>
+    </section>
+    <section class="quiz-container">
+      <span id="question"></span>
+      <span class="options-container">
+        <button class="option" id="option1"></button>
+        <button class="option" id="option2"></button>
+        <button class="option" id="option3"></button>
+        <button class="option" id="option4"></button>
+      </span>
+    </section>
+    <section class="done-container">
+      <h1>All done!</h1>
+      Your final score is <span id="final-score">.</span>
+      <br>Enter initials: <input type="text" id="initials"><button id="submit">Submit</button>
+    </section>
+    <section class="high-scores-container" id="disp-high-scores" >
+      <h1>High Scores</h1>
+      <span id="high-scores"></span>
+      <button id="go-back">Go back</button><button id="clear-scores">Clear High Scores</button>
     </section>
   </main>
+
   <script src="./assets/scripts/script.js"></script>
 </body>
 

@@ -1,55 +1,3 @@
-const myQuestions = [
- {
-    question: "Commonly Used data types DO not include:",
-    answers: { 
-      a:  "1. strings", 
-      b:  "2. booleans",
-      c:  "3. alerts",
-      d:  "4. numbers" 
-    },
-    correctAnswer: "c"
-},
-{
-    question: "The condition in an if / else statement is enclosed with __________.",
-    answers: { 
-      a:  "1. quotes", 
-      b:  "2. curly brackets",
-      c:  "3. parentheses",
-      d:  "4. square brackets" 
-     },
-     correctAnswer: "c"
- },
-{
-    question: "Arrays in JavaScript can be used to store ____________.",
-    answers: { 
-            a:  "1. numbers and strings", 
-            b:  "2. other arrays",
-            c:  "3. booleans",
-            d:  "4. all of the above" 
-      },
-      correctAnswer: "d"
-},
-{
-    question: "String values must be enclosed within ____________ when being assigned to variables.",
-    answers: { 
-            a:  "1. commas", 
-            b:  "2. curly braces",
-            c:  "3. quotes",
-            d:  "4. parentheses" 
-      },
-      correctAnswer: "c"
- },
- {
-     question: "A very useful tool used during development and debugging for printing content to the debugger is ____________.",
-     answers: { 
-            a:  "1. JavaScript", 
-            b:  "2. terminal/bash",
-            c:  "3. for loops",
-            d:  "4. console log" 
-      },
-      correctAnswer: "d"
-  },
-];
 
 //toggle to display or hide html elements - pass element id
 //so can use this function for all elements
@@ -61,3 +9,57 @@ function displayHideElement(elementName) {
     x.style.display = "none";
   }
 }
+
+/array to store the questions, answers and correct answer
+const myQuestions = [
+ {
+    question: "Commonly Used data types DO not include:",
+    answers: { 
+      option1:  "1. strings", 
+      option2:  "2. booleans",
+      option3:  "3. alerts",
+      option4:  "4. numbers" 
+    },
+    correctAnswer: "option3"
+},
+{
+    question: "The condition in an if / else statement is enclosed with __________.",
+    answers: { 
+      option1:  "1. quotes", 
+      option2:  "2. curly brackets",
+      option3:  "3. parentheses",
+      option4:  "4. square brackets" 
+     },
+     correctAnswer: "option3"
+ },
+{
+    question: "Arrays in JavaScript can be used to store ____________.",
+    answers: { 
+      option1:  "1. numbers and strings", 
+      option2:  "2. other arrays",
+      option3:  "3. booleans",
+      option4:  "4. all of the above" 
+      },
+      correctAnswer: "option4"
+},
+{
+    question: "String values must be enclosed within ____________ when being assigned to variables.",
+    answers: { 
+      option1:  "1. commas", 
+      option2:  "2. curly braces",
+      option3:  "3. quotes",
+      option4:  "4. parentheses" 
+      },
+      correctAnswer: "option3"
+ },
+ {
+     question: "A very useful tool used during development and debugging for printing content to the debugger is ____________.",
+     options: { 
+      option1:  "1. JavaScript", 
+      option2:  "2. terminal/bash",
+      option3:  "3. for loops",
+      option4:  "4. console log" 
+      },
+      correctAnswer: "option4"
+  }
+];
