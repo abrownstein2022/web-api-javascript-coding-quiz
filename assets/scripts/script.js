@@ -1,16 +1,30 @@
+// var timerEl = document.getElementById('timer-count');
+// var questionEl = document.getElementById('question');
+// var wordBlank = document.querySelector(".word-blanks");
+// var win = document.querySelector(".win");
+// var lose = document.querySelector(".lose");
 
-//toggle to display or hide html elements - pass element id
-//so can use this function for all elements
-function displayHideElement(elementName) {
-  var x = document.getElementById(elementName);
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+
+var timerEl = document.querySelector("#timer-count");  //use # since this is based on ID not class
+var startButton = document.querySelector(".start-button");  //this is . since based on class not ID
+var showQuiz = document.querySelector("#quiz-container");
+var showStart = document.querySelector("#start-container");
+
+function updateTimer() {
+     timerInterval = setInterval(function () {
+//when timer reaches zero, clear interval function and display game over
+        if (timeLeft === 0) {
+               clearInterval(timerInterval);
+               gameOver();
+          } else {
+          timeLeft--;
+          timerDisplay.textContent = timeLeft + " seconds left";
+          }
+     }, 1000);
 }
 
-/array to store the questions, answers and correct answer
+
+//array to store the questions, answers and correct answer
 const myQuestions = [
  {
     question: "Commonly Used data types DO not include:",
@@ -63,3 +77,20 @@ const myQuestions = [
       correctAnswer: "option4"
   }
 ];
+
+var numberOfQuestions = myQuestions.length;
+var timeLeft = numberOfQuestions * 15;  //timer starts at 15 seconds per question so 5 questions * 15 secs = 75
+var timerID; //need a way to capture timer process id at global level so we can kill it later 
+function start(){  //use setInterval for timer and countDown is a function parameter of another function (callback function)
+   timerID = setInterval(countDown,1000)  //1000 milliseconds = 1 second 
+   showQuiz.classList.remove("hide");  //now show the quiz section
+   showStart.classList.add("hide");  //now hide the start button section
+}
+//now create function for countDown (function is light blue until it's created below and then turns yellow)
+function countDown(){  //use textContent to capture data in between element from html page 
+  timerEl.textContent = timeLeft;
+  timeLeft--;  //decrement timer by 1 second
+}
+
+//add event listener
+startButton.addEventListener("click",start)  //start is object being passed - when user clicks on start button, start function is run and must be created above it

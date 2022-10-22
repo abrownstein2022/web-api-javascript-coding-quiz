@@ -21,13 +21,13 @@
   </header>
 
   <main>
-    <section class="start-container">
+    <section class="start-container" id="start-container">
       <h2>Coding Quiz Challenge</h2>
       Try to answer the following code-related questions wtihin the time limit.<br>Keep in mind that incorrect
       answers will penalize your score/time<br>by 10 seconds!
       <br><button class="start-button">Start Quiz</button>
     </section>
-    <section class="quiz-container">
+    <section class="quiz-container hide" id="quiz-container">
       <span id="question"></span>
       <span class="options-container">
         <button class="option" id="option1"></button>
@@ -36,12 +36,12 @@
         <button class="option" id="option4"></button>
       </span>
     </section>
-    <section class="done-container">
+    <section class="done-container hide">
       <h1>All done!</h1>
       Your final score is <span id="final-score">.</span>
       <br>Enter initials: <input type="text" id="initials"><button id="submit">Submit</button>
     </section>
-    <section class="high-scores-container" id="disp-high-scores" >
+    <section class="high-scores-container hide" id="disp-high-scores" >
       <h1>High Scores</h1>
       <span id="high-scores"></span>
       <button id="go-back">Go back</button><button id="clear-scores">Clear High Scores</button>
