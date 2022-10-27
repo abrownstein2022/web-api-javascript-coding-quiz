@@ -105,6 +105,11 @@
     border-radius: 0px;
   
   } 
+
+  /*align button text left*/
+  .text-left {
+    text-align: left;
+  }
   
 
   .start-container,.quiz-container,  .done-container, .high-scores-container {
