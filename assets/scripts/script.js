@@ -25,12 +25,12 @@ var opt4 = document.getElementById("opt4");
 //array to store the questions, answers and correct answer
 const questions = [
  {
-      ques:  "Commonly Used data types  not include:", 
+      ques:  "Commonly Used data types does not include:", 
       opt1:  "1. strings", 
       opt2:  "2. booleans",
       opt3:  "3. alerts",
       opt4:  "4. numbers",
-      ans:    "opt1"
+      ans:   "3. alerts",
 },
 {
       ques:  "The condition in an if / else statement is enclosed with __________.",
@@ -38,7 +38,7 @@ const questions = [
       opt2:  "2. curly brackets",
       opt3:  "3. parentheses",
       opt4:  "4. square brackets",
-      ans:   "opt3"
+      ans:   "3. parentheses"
 },
 {
       ques:  "Arrays in JavaScript can be used to store ____________.",
@@ -46,7 +46,7 @@ const questions = [
       opt2:  "2. other arrays",
       opt3:  "3. booleans",
       opt4:  "4. all of the above",
-      ans:   "opt4"
+      ans:   "4. all of the above"
 },
 {
       ques:  "String values must be enclosed within ____________ when being assigned to variables.",
@@ -54,7 +54,7 @@ const questions = [
       opt2:  "2. curly braces",
       opt3:  "3. quotes",
       opt4:  "4. parentheses",
-      ans:   "opt3"
+      ans:   "3. quotes"
 },
 {
       ques:  "A very useful tool used during development and debugging for printing content to the debugger is ____________.",
@@ -62,7 +62,7 @@ const questions = [
       opt2:  "2. terminal/bash",
       opt3:  "3. for loops",
       opt4:  "4. console log",
-      ans:   "opt4"
+      ans:   "4. console log"
   }
 ];
 
@@ -93,9 +93,24 @@ function displayQuizData(){
    opt4.textContent = questions[index].opt4;
 }
 function nextQuestion(){
-      index++; //get next array element
-      displayQuizData();
+      //capture answer before increment to next array element
+      //textContent is the text on the button
+      //this represents current object which is the button clicked
+      if(this.textContent === questions[index].ans){
+            alert("correct answer");    
+      }else{
+            alert('wrong answer');
 
+      }
+
+      index++; //get next array element
+      if(index < qCount){
+      displayQuizData();
+      }else{
+       //stop the clock, hide the queestion and unhide the initials logic and hide the questions container
+       //selectors are to put information on the page and to put user interaction
+       //button click is user interaction.
+      }
 
 }
 
@@ -112,6 +127,6 @@ function countDown(){
 //The startQuiz function must be created above this line.
 startButton.addEventListener("click",startQuiz);
 opt1.addEventListener("click",nextQuestion);
-opt2.addEventListener("click",nextQuestion);
+opt2.addEventListener("click",nextQuestion); //callback is next question
 opt3.addEventListener("click",nextQuestion);
 opt4.addEventListener("click",nextQuestion);
