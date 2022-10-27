@@ -1,96 +1,117 @@
-// var timerEl = document.getElementById('timer-count');
-// var questionEl = document.getElementById('question');
-// var wordBlank = document.querySelector(".word-blanks");
-// var win = document.querySelector(".win");
-// var lose = document.querySelector(".lose");
-
-
 var timerEl = document.querySelector("#timer-count");  //use # since this is based on ID not class
 var startButton = document.querySelector(".start-button");  //this is . since based on class not ID
 var showQuiz = document.querySelector("#quiz-container");
 var showStart = document.querySelector("#start-container");
+var ques = document.getElementById("ques");
+var opt1 = document.getElementById("opt1");
+var opt2 = document.getElementById("opt2");
+var opt3 = document.getElementById("opt3");
+var opt4 = document.getElementById("opt4");
 
-function updateTimer() {
-     timerInterval = setInterval(function () {
-//when timer reaches zero, clear interval function and display game over
-        if (timeLeft === 0) {
-               clearInterval(timerInterval);
-               gameOver();
-          } else {
-          timeLeft--;
-          timerDisplay.textContent = timeLeft + " seconds left";
-          }
-     }, 1000);
-}
+// function updateTimer() {
+//      timerInterval = setInterval(function () {
+// //when timer reaches zero, clear interval function and display game over
+//         if (timeLeft === 0) {
+//                clearInterval(timerInterval);
+//                gameOver();
+//           } else {
+//           timeLeft--;
+//           timerDisplay.textContent = timeLeft + " seconds left";
+//           }
+//      }, 1000);
+// }
 
 
 //array to store the questions, answers and correct answer
-const myQuestions = [
+const questions = [
  {
-    question: "Commonly Used data types DO not include:",
-    answers: { 
-      option1:  "1. strings", 
-      option2:  "2. booleans",
-      option3:  "3. alerts",
-      option4:  "4. numbers" 
-    },
-    correctAnswer: "option3"
+      ques:  "Commonly Used data types  not include:", 
+      opt1:  "1. strings", 
+      opt2:  "2. booleans",
+      opt3:  "3. alerts",
+      opt4:  "4. numbers",
+      ans:    "opt1"
 },
 {
-    question: "The condition in an if / else statement is enclosed with __________.",
-    answers: { 
-      option1:  "1. quotes", 
-      option2:  "2. curly brackets",
-      option3:  "3. parentheses",
-      option4:  "4. square brackets" 
-     },
-     correctAnswer: "option3"
- },
-{
-    question: "Arrays in JavaScript can be used to store ____________.",
-    answers: { 
-      option1:  "1. numbers and strings", 
-      option2:  "2. other arrays",
-      option3:  "3. booleans",
-      option4:  "4. all of the above" 
-      },
-      correctAnswer: "option4"
+      ques:  "The condition in an if / else statement is enclosed with __________.",
+      opt1:  "1. quotes", 
+      opt2:  "2. curly brackets",
+      opt3:  "3. parentheses",
+      opt4:  "4. square brackets",
+      ans:   "opt3"
 },
 {
-    question: "String values must be enclosed within ____________ when being assigned to variables.",
-    answers: { 
-      option1:  "1. commas", 
-      option2:  "2. curly braces",
-      option3:  "3. quotes",
-      option4:  "4. parentheses" 
-      },
-      correctAnswer: "option3"
- },
- {
-     question: "A very useful tool used during development and debugging for printing content to the debugger is ____________.",
-     options: { 
-      option1:  "1. JavaScript", 
-      option2:  "2. terminal/bash",
-      option3:  "3. for loops",
-      option4:  "4. console log" 
-      },
-      correctAnswer: "option4"
+      ques:  "Arrays in JavaScript can be used to store ____________.",
+      opt1:  "1. numbers and strings", 
+      opt2:  "2. other arrays",
+      opt3:  "3. booleans",
+      opt4:  "4. all of the above",
+      ans:   "opt4"
+},
+{
+      ques:  "String values must be enclosed within ____________ when being assigned to variables.",
+      opt1:  "1. commas", 
+      opt2:  "2. curly braces",
+      opt3:  "3. quotes",
+      opt4:  "4. parentheses",
+      ans:   "opt3"
+},
+{
+      ques:  "A very useful tool used during development and debugging for printing content to the debugger is ____________.",
+      opt1:  "1. JavaScript", 
+      opt2:  "2. terminal/bash",
+      opt3:  "3. for loops",
+      opt4:  "4. console log",
+      ans:   "opt4"
   }
 ];
 
-var numberOfQuestions = myQuestions.length;
-var timeLeft = numberOfQuestions * 15;  //timer starts at 15 seconds per question so 5 questions * 15 secs = 75
+var index = 0;  //use this var to count array elements so can go to next element until no more left
+ // If user pressed Cancel, immediately end function
+//  if (!userChoice) {
+//   return;
+// }
+
+var qCount = questions.length;  //array length is how many items in the array
+var timeLeft = qCount * 15;  //timer starts at 15 seconds per question so 5 questions * 15 secs = 75
 var timerID; //need a way to capture timer process id at global level so we can kill it later 
-function start(){  //use setInterval for timer and countDown is a function parameter of another function (callback function)
-   timerID = setInterval(countDown,1000)  //1000 milliseconds = 1 second 
+function startQuiz(){  //use setInterval for timer and countDown is a function parameter of another function (callback function)
+   timerID = setInterval(countDown,1000)  //1000 milliseconds = 1 second - so initial interval is by 1 secord
    showQuiz.classList.remove("hide");  //now show the quiz section
    showStart.classList.add("hide");  //now hide the start button section
+   displayQuizData(); //connect to function displayQuizData belowq
+  
 }
+//global function. The html code is static but js gets the dynamic data in the html.
+function displayQuizData(){  
+//ques and opt1-opt4 are selectors declared above and are objects on the html page
+//ques.textContent is the ID on the html page and questions[index] is the array and .ques is the array element defined above
+   ques.textContent = questions[index].ques; 
+   opt1.textContent = questions[index].opt1;
+   opt2.textContent = questions[index].opt2;  //opt1-4 are the options/choices on the html page
+   opt3.textContent = questions[index].opt3; 
+   opt4.textContent = questions[index].opt4;
+}
+function nextQuestion(){
+      index++; //get next array element
+      displayQuizData();
+
+
+}
+
 //now create function for countDown (function is light blue until it's created below and then turns yellow)
-function countDown(){  //use textContent to capture data in between element from html page 
+//use textContent to capture data in between element from html page 
+function countDown(){  
   timerEl.textContent = timeLeft;
   timeLeft--;  //decrement timer by 1 second
 }
 
-//add event listener
-startButton.addEventListener("click",start)  //start is object being passed - when user clicks on start button, start function is run and must be created above it
+//add event listener // Attaches event listener to button
+//startQuiz below is object (a function) being passed.
+//When user clicks on the Start Quiz button, startQuiz function above is run.
+//The startQuiz function must be created above this line.
+startButton.addEventListener("click",startQuiz);
+opt1.addEventListener("click",nextQuestion);
+opt2.addEventListener("click",nextQuestion);
+opt3.addEventListener("click",nextQuestion);
+opt4.addEventListener("click",nextQuestion);
