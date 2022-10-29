@@ -24,6 +24,25 @@
     margin-top: 20px;
   }
 
+  .right-wrong-msg{
+    padding:5px;
+    font:italic;
+    font-size:15px;
+    position:relative;
+  }
+
+  .right-wrong-msg::before{
+    content: "";  /*fake out as if there were text here so can use underline property below button*/
+    border-top: 5px solid #c8c8c9; /*this is the thickness, style and color of the border*/
+    position:absolute;
+    bottom:4px;  /*sets up spacing below*/
+    left: 0px;    /*no left spacing*/
+    width: 400px;  /*same width (how long) as buttons above and beloww*/
+    height: 4px;   /*how thick (high) line is*/
+    top: 4px;
+    
+  }
+
   /* .very-top-part {
     display: flex;
     margin-top: 16px;

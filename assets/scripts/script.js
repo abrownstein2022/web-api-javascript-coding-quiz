@@ -7,6 +7,7 @@ var opt1 = document.getElementById("opt1");
 var opt2 = document.getElementById("opt2");
 var opt3 = document.getElementById("opt3");
 var opt4 = document.getElementById("opt4");
+var rightWrongMsg = document.getElementById("right-wrong-msg");
 
 // function updateTimer() {
 //      timerInterval = setInterval(function () {
@@ -95,19 +96,20 @@ function displayQuizData(){
 function nextQuestion(){
       //capture answer before increment to next array element
       //textContent is the text on the button
-      //this represents current object which is the button clicked
+      //"this."" represents current object which is the button clicked
       if(this.textContent === questions[index].ans){
-            alert("correct answer");    
+           //alert("correct answer");   
+            rightWrongMsg.textContent = "Correct!";
       }else{
-            alert('wrong answer');
-
+          //  alert('wrong answer');
+            rightWrongMsg.textContent = "Wrong!";
       }
 
       index++; //get next array element
       if(index < qCount){
       displayQuizData();
       }else{
-       //stop the clock, hide the queestion and unhide the initials logic and hide the questions container
+       //stop the clock, hide the question and unhide the initials logic and hide the questions container
        //selectors are to put information on the page and to put user interaction
        //button click is user interaction.
       }
