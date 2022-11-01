@@ -23,7 +23,8 @@
     line-height: 8px;
     margin-top: 20px;
   }
-
+ 
+ 
   .right-wrong-msg{
     padding: 25px;
     font-size:20px;
@@ -41,26 +42,6 @@
     height: 4px;   /*how thick (high) line is*/
     top: 14px;
   }
-
-  /* .very-top-part {
-    display: flex;
-    margin-top: 16px;
-    margin-bottom: 10px;
-    background: lightyellow;
-    font-size: 25px;
-  } */
-
-  /*descending selector*/
-  /* .very-top-part a{
-    width: 80%;
-    text-align: left;
-   }
- 
-   .very-top-part div{
-    width: 20%; 
-   } */
-
-
   .options-container {
     display: flex;
     flex-direction: column;
@@ -68,7 +49,10 @@
     margin-top: 16px;
   }
   
+  button:hover{
+    background: rgb(207, 138, 207); /*light purpose when hover over button*/
 
+  }
   button {
     background: lightblue;
     border-radius: 8px;
