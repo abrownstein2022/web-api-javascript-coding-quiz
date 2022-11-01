@@ -4,6 +4,8 @@
 This website was created to test your JavaScript skills with a timed multiple choice test.
 
 ```md
+This website was created to test your JavaScript skills with a timed multiple choice test.
+
 User Story:
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores

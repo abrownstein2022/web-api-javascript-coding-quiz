@@ -25,10 +25,10 @@
   }
 
   .right-wrong-msg{
-    padding:5px;
-    font:italic;
-    font-size:15px;
+    padding: 25px;
+    font-size:20px;
     position:relative;
+    font-style: italic;
   }
 
   .right-wrong-msg::before{
@@ -39,8 +39,7 @@
     left: 0px;    /*no left spacing*/
     width: 400px;  /*same width (how long) as buttons above and beloww*/
     height: 4px;   /*how thick (high) line is*/
-    top: 4px;
-    
+    top: 14px;
   }
 
   /* .very-top-part {
