@@ -1,13 +1,22 @@
 var timerEl = document.querySelector("#timer-count");  //use # since this is based on ID not class
 var startButton = document.querySelector(".start-button");  //this is . since based on class not ID
+var submitButton = document.querySelector("#submit"); //this is ID not class so need #
 var showQuiz = document.querySelector("#quiz-container");
 var showStart = document.querySelector("#start-container");
+var showInitials = document.querySelector("#initials-container");
 var ques = document.getElementById("ques");
 var opt1 = document.getElementById("opt1");
 var opt2 = document.getElementById("opt2");
 var opt3 = document.getElementById("opt3");
 var opt4 = document.getElementById("opt4");
 var rightWrongMsg = document.getElementById("right-wrong-msg");
+var finalScore = document.getElementById("final-score");
+var initials = document.getElementById("initials");
+//need global array for scores - high school array
+//put current score and initials in high score array
+//save high score array into local storage
+//then repopulate values from that array for high scores
+
 
 // function updateTimer() {
 //      timerInterval = setInterval(function () {
@@ -103,15 +112,22 @@ function nextQuestion(){
       }else{
           //  alert('wrong answer');
             rightWrongMsg.textContent = "Wrong!";
+            timeLeft = timeLeft - 10;
       }
 
       index++; //get next array element
       if(index < qCount){
       displayQuizData();
       }else{
-       //stop the clock, hide the question and unhide the initials logic and hide the questions container
-       //selectors are to put information on the page and to put user interaction
-       //button click is user interaction.
+       //Stop the clock, hide the question and unhide the initials logic and hide the questions container.
+       //Selectors are to put information on the page and to put user interaction. Button click is user interaction.
+       clearInterval(timerID);  //stops the clock
+       showQuiz.classList.add("hide");  //now show the quiz section
+       showInitials.classList.remove("hide"); 
+       //need to set to selector timerEL not the varriable timeLeft or the score will be one second off
+       //need to use textcontent to get value of the selector.  Only use .val for text input boxes.
+       finalScore.textContent = timerEl.textContent + '.';  
+      
       }
 
 }
@@ -123,6 +139,13 @@ function countDown(){
   timeLeft--;  //decrement timer by 1 second
 }
 
+function saveScores{
+      finalScore.textContent= 
+      initials.value
+      localStorage.setItem("scores")
+
+}
+
 //add event listener // Attaches event listener to button
 //startQuiz below is object (a function) being passed.
 //When user clicks on the Start Quiz button, startQuiz function above is run.
@@ -132,3 +155,4 @@ opt1.addEventListener("click",nextQuestion);
 opt2.addEventListener("click",nextQuestion); //callback is next question
 opt3.addEventListener("click",nextQuestion);
 opt4.addEventListener("click",nextQuestion);
+submitButton.addEventListener("click",saveScores);
