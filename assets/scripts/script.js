@@ -141,11 +141,32 @@ function nextQuestion(){
 
 }
 
+
 //now create function for countDown (function is light blue until it's created below and then turns yellow)
 //use textContent to capture data in between element from html page 
 function countDown(){  
   timerEl.textContent = timeLeft;
   timeLeft--;  //decrement timer by 1 second
+}
+
+function showScores(){
+      console.log("in showscores");
+      // showInitialsEl.classList.add("hide");  //hide initials list just used to enter data
+      // showHighScoresEl.classList.remove("hide"); 
+      let data = JSON.parse(localStorage.getItem('scores'));
+      console.log(data.finalScore); 
+      console.log(data.initials); 
+      //https://www.geeksforgeeks.org/ways-iterating-array-javascript/   
+      //https://attacomsian.com/blog/javascript-iterate-over-local-storage-keys  
+      //use console.table(results)
+      // for (let i = 0; i < data.length; i++) {
+
+      //       console.table(data.finalScore);
+      // }
+
+      for (const key in localStorage) {
+            console.log(`${key}: ${localStorage.getItem(key)}`)
+          }
 }
 
 function saveScores(){
@@ -162,12 +183,12 @@ function saveScores(){
       //first param below references the local storage value
       //'scores' below references the array in local storage
   //    localStorage.setItem('scores',JSON.stringify(scoresArray));  
-      //don't need push above or scores array 
-      //create scores object from submission (see class activity #24)
-      var scores = {finalScore, initials};
+      //don't need push above 
+      //create scores object from submission ??(see class activity #24)
+      //https://www.geeksforgeeks.org/ways-iterating-array-javascript/
+      scoresArray = {finalScore, initials};
       // set new submission to local storage 
-      localStorage.setItem("scores", JSON.stringify(scores));  
-
+      localStorage.setItem("scores", JSON.stringify(scoresArray));  
       showHighScoresEl.classList.remove("hide");   
       showInitialsEl.classList.add("hide");  //hide initials list just used to enter data
       showScores();
@@ -175,18 +196,7 @@ function saveScores(){
 
 
 
-function showScores(){
-      console.log("in showscores");
-      // showInitialsEl.classList.add("hide");  //hide initials list just used to enter data
-      // showHighScoresEl.classList.remove("hide"); 
-      // //for loop to retrieve array in local storage and assign to global array      
-      for (let i = 0; i < localStorage.length; i++) {
-            console.log(i);
-            console.log(localStorage.getItem(localStorage.key(i)));
-            console.log()
-          }
-     
-}
+
 
 //this starts at the very beginning for user to press Start Quiz button
 function showStart(){ 
