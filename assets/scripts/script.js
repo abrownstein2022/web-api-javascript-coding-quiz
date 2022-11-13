@@ -1,17 +1,24 @@
+//add El to end of vars below so don't get confused if they are variables
+//or selectors
 var timerEl = document.querySelector("#timer-count");  //use # since this is based on ID not class
 var startButton = document.querySelector(".start-button");  //this is . since based on class not ID
-var submitButton = document.querySelector("#submit"); //this is ID not class so need #
+var submitButtonEl = document.querySelector("#submit"); //this is ID not class so need #
+var clearScoresEl = document.querySelector("#clear-scores");
+var goBackEl = document.querySelector("#go-back");
 var showQuiz = document.querySelector("#quiz-container");
 var showStart = document.querySelector("#start-container");
 var showInitials = document.querySelector("#initials-container");
+var showScoresEl = document.querySelector("#disp-high-scores");
 var ques = document.getElementById("ques");
 var opt1 = document.getElementById("opt1");
 var opt2 = document.getElementById("opt2");
 var opt3 = document.getElementById("opt3");
 var opt4 = document.getElementById("opt4");
 var rightWrongMsg = document.getElementById("right-wrong-msg");
-var finalScore = document.getElementById("final-score");
-var initials = document.getElementById("initials");
+var finalScoreEl = document.getElementById("final-score");
+var initialsEl = document.getElementById("initials");
+var scoresArray = [];  //declare array to hold scores
+
 //need global array for scores - high school array
 //put current score and initials in high score array
 //save high score array into local storage
@@ -126,7 +133,7 @@ function nextQuestion(){
        showInitials.classList.remove("hide"); 
        //need to set to selector timerEL not the varriable timeLeft or the score will be one second off
        //need to use textcontent to get value of the selector.  Only use .val for text input boxes.
-       finalScore.textContent = timerEl.textContent + '.';  
+       finalScoreEl.textContent = timerEl.textContent + '.';  
       
       }
 
@@ -139,10 +146,29 @@ function countDown(){
   timeLeft--;  //decrement timer by 1 second
 }
 
-function saveScores{
-      finalScore.textContent= 
-      initials.value
-      localStorage.setItem("scores")
+function saveScores(){
+     //timerEl.textContent must be used to get the selector value since it will not be 1 second off
+      finalScoreEl.textContent = timeLeft;  //to put on page
+      var finalScore = timerEl.textContent;  //set up for local storage
+      var initials = initialsEl.value;  //initialsEl is the selector
+      //this is an object to group the values together and then push into array
+      //timeleft is the score
+      var scores = {finalScore, initials}; 
+      //push puts new elements into an array - at bottom of array
+      scoresArray.push(scores);
+      //first param below references the local storage value
+      //'scores' below references the array in local storage
+      localStorage.setItem('scores',JSON.stringify(scoresArray));      
+      showScores.classList.add("hide");   
+}
+
+function clearScores(){
+  localStorage.clear();      
+
+}
+
+function showScores(){
+//for loop to retrieve array in local storage and assign to global array      
 
 }
 
@@ -155,4 +181,7 @@ opt1.addEventListener("click",nextQuestion);
 opt2.addEventListener("click",nextQuestion); //callback is next question
 opt3.addEventListener("click",nextQuestion);
 opt4.addEventListener("click",nextQuestion);
-submitButton.addEventListener("click",saveScores);
+submitButtonEl.addEventListener("click",saveScores);
+clearScoresEl.addEventListener("click",clearScores);
+goBackEl.addEventListener("click",startQuiz);
+showScoresEl.addEventListener("click",showScores);
