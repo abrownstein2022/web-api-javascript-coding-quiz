@@ -145,6 +145,7 @@ function nextQuestion(){
 //now create function for countDown (function is light blue until it's created below and then turns yellow)
 //use textContent to capture data in between element from html page 
 function countDown(){  
+  if(timeLeft === 0){clearInterval(timerID);}  //stops the clock if time already 0
   timerEl.textContent = timeLeft;
   timeLeft--;  //decrement timer by 1 second
 }
