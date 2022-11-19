@@ -1,7 +1,7 @@
 # Rutgers Bootcamp Challenge 4 - JavaScript Quiz using Web APIs
 
+![license](https://img.shields.io/badge/license-MIT-black)
 ## Description
-This website was created to test your JavaScript skills with a timed multiple choice test.
 
 ```md
 This website was created to test your JavaScript skills with a timed multiple choice test.
@@ -32,21 +32,18 @@ THEN I can save my initials and score
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Badges](#badges)
 - [Features](#features)
 - [How-to-Contribute](#how-to-contribute)
-- [Tests](tests)
+- [Tests](#test-instructions)
+- [Questions](#questions)
 
 ## Installation
 
 No installation is needed to use this application. 
 
-Here's a link to the GitHub repo for this project:<br>
-https://github.com/abrownstein2022/ch4-web-api-coding-quiz/
-
 ## Usage
 
-Just click on the link below to use this application:<br>
+Click on the link below to use this application:<br>
 https://abrownstein2022.github.io/ch4-web-api-coding-quiz/
 
 ```md
@@ -54,29 +51,33 @@ This quiz displays 5 multiple choice questions on JavaScript with 4 possible cho
 
 You get 15 seconds for each question or 75 seconds total.
 
-If you select the wrong answer, you will penalized by 20 seconds.
+If you select the wrong answer, you will penalized by 10 seconds.
 
 Once the timer counts down to 0, the quiz is over.
 
-Please refer to the screenshots and animation below to see the application being used.
-    
-![website-image](assets/images/ch4-screenshot1.png)
-![website-image](assets/images/ch4-screenshot2.jpg)
-![website-image](assets/images/ch4-screenshot3.png)    
+Please refer to the screenshots and animation below to see how the application works.
+       
 ```
-.................put link to animation here..............
-
+![website-image](./assets/images/ch4-screen1.png)
+![website-image](./assets/images/ch4-screen2.png)
+![website-image](./assets/images/ch4-screen3.png) 
+![website-image](./assets/images/ch4-screen4.png)
+![website-image](./assets/images/ch4-screen5.png)
+![website-image](./assets/images/ch4-screen6.png) 
+![website-image](./assets/images/ch4-screen7.png)
+![website-image](./assets/images/ch4-screen8.png)
+![website-image](./assets/images/ch4-screen10.png)
+![website-image](./assets/images/ch4-screen11.png) 
 
 ## Credits
-N/A
+Alexis Brownstein, bootcamp instructor, TAs and Tutor 
 
 ## License
 
-N/A
-
-## Badges
-
-N/A
+ ```md
+ MIT 
+```
+![badge](https://img.shields.io/badge/license-mit-black)
 
 ## Features
 ```md
@@ -89,7 +90,20 @@ asdfasdfasdf
 ## How-to-Contribute
 
 N/A
+## Test Instructions
 
-## Tests
+```md
+n/a
+```
+## Questions
 
-The user does not need to do any tests.  This project was tested thoroughly.
+```md
+Feel free to contact me with any questions.
+
+My email is: alexis@drdatabase.com.
+```
+
+My GitHub Profile link:
+  
+  https://github.com/abrownstein2022
+ 
