@@ -82,10 +82,14 @@ Alexis Brownstein, bootcamp instructor, TAs and Tutor
 ## Features
 ```md
 The main features in this project are:
-adsfasfdasdf
-asdfasdfasdf
-asdfasdfasdf
-asdfasdfasdf
+1. Start quiz button with timer at top right
+2. Five questions to test your JavaScript knowledge
+3. Time counts down and you also lose an additional 10 seconds for each wrong answer
+4. Submit (save) high scores button
+5. View high scores ink to display currently saved high scores with users' initials
+6. Clear high scores button
+7. Go back (to start) button  
+8. Game is over when you answer all the questions or if the timer reaches 0 before you answer all the questions.
 ```
 ## How-to-Contribute
 
