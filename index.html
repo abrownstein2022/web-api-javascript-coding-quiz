@@ -11,12 +11,14 @@
 <body>
   <!--header displays timer and high score link-->
   <header>
-    <div style="width:95%;">
-      <a href="#" onclick='displayHideElement("disp-high-scores")'>View high scores</a>
+    <!-- onclick='displayHideElement("disp-high-scores")' -->
+    <div  style="width:95%;">
+      <!-- can't have empty a tag - must put # in href -->
+      <a id="high-scores-link" href="#">View high scores</a>
     </div>
     <!--span means no carriage return vs div-->
     <div style="width:5%;">
-      Time:<span class="timer-text" id="timer-count"></span>
+      Time:<span class="timer-text" id="timer-count">0</span>
     </div>
   </header>
 
@@ -44,7 +46,8 @@
     </section>
     <section class="high-scores-container hide" id="disp-high-scores" >
       <h1>High Scores</h1>
-      <ol id="high-scores"></ol>  <!--will use JS to place li's here which will contain each row with initials and high score-->
+      <ol id="high-scores"></ol>  
+      <!--OL ordered list shows numbered list automaticlaly. Use JS to place li's here which will contain each row with initials and high score-->
       <button id="go-back">Go back</button><button id="clear-scores">Clear High Scores</button>
     </section>
   </main>

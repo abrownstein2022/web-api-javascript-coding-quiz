@@ -8,7 +8,7 @@ var goBackEl = document.querySelector("#go-back");
 var showQuizEl = document.querySelector("#quiz-container");
 var showStartEl = document.querySelector("#start-container");
 var showInitialsEl = document.querySelector("#initials-container");
-var showHighScoresEl = document.querySelector("#disp-high-scores");
+var showHighScoresEl = document.querySelector("#disp-high-scores"); //this is high scores section
 var quesEl = document.getElementById("ques");
 var opt1El = document.getElementById("opt1");
 var opt2El = document.getElementById("opt2");
@@ -19,6 +19,7 @@ var finalScoreEl = document.getElementById("final-score");
 var initialsEl = document.getElementById("initials");
 let scoresArray = JSON.parse(localStorage.getItem("scores")) || []; //OR  //getItem(KEY) in this case scores is the key
 let highScoresEl = document.getElementById("high-scores");
+let highScoresLinkEl = document.getElementById("high-scores-link");
 
 //need global array for scores - high school array
 //put current score and initials in high score array
@@ -149,10 +150,11 @@ function countDown() {
 }
 
 function showScores() {
-  console.log("in showscores");
+  //alert("in showscores");
   // showInitialsEl.classList.add("hide");  //hide initials list just used to enter data
   // showHighScoresEl.classList.remove("hide");
   let data = JSON.parse(localStorage.getItem("scores"));
+  console.log(data);
   //https://www.geeksforgeeks.org/ways-iterating-array-javascript/
   //https://attacomsian.com/blog/javascript-iterate-over-local-storage-keys
   //use console.table(results)
@@ -160,19 +162,26 @@ function showScores() {
 
   //       console.table(data.finalScore);
   // }
-//highScoresEl
-//   let data, grab all of it's object values, convert them into an array, then sort
-//map needs a return statement but forEach does not
-//changed UL or OL in html so ordered list so html automatically numbers the scores
-//data is the array from above - already contains local storage values
-console.log(data.sort())
-  data.forEach((arrayData)=>{  
-     
+  //highScoresEl
+  //   let data, grab all of its object values, convert them into an array, then sort
+  //map needs a return statement but forEach does not
+  //changed UL or OL in html so ordered list so html automatically numbers the scores
+  //data is the array from above - already contains local storage values
+  if(data) {   //use boolean here so only go into code if at least one value in array
+    //make sure array has data
+    highScoresEl.textContent ="";  //clear out previous runs of this OL/LI - refresh or will get the same array day each time the high scores link is clicked
+    console.log(data.sort());
+    data.forEach((arrayData) => {
+      console.log(arrayData);
       let newLi = document.createElement("li");
-      newLi.textContent = arrayData.initials + ' - ' + arrayData.finalScore;
+      newLi.textContent = arrayData.initials + " - " + arrayData.finalScore;
       highScoresEl.appendChild(newLi);
-})   
- //      highScoresEl+='<li>' + (`${key}: ${localStorage.getItem(key)}`) + '</li>';
+    });
+    //      highScoresEl+='<li>' + (`${key}: ${localStorage.getItem(key)}`) + '</li>';
+    //
+  }
+  showHighScoresEl.classList.remove("hide");
+  showStartEl.classList.add("hide");
 }
 
 function saveScores() {
@@ -184,7 +193,7 @@ function saveScores() {
   //timeleft is the score
   //    var scores = {finalScore, initials};
   //push puts new elements into an array - at bottom of array
-  scoresArray.push({ finalScore, initials });  //based on array defined at top of file
+  scoresArray.push({ finalScore, initials }); //based on array defined at top of file
   //first param below references the local storage value
   //'scores' below references the array in local storage
   //    localStorage.setItem('scores',JSON.stringify(scoresArray));
@@ -193,14 +202,15 @@ function saveScores() {
   //https://www.geeksforgeeks.org/ways-iterating-array-javascript/
   // set new submission to local storage
   localStorage.setItem("scores", JSON.stringify(scoresArray));
+  showHighScoresEl.classList.remove("hide");
+  showInitialsEl.classList.add("hide"); //hide initials list just used to enter data
+  showScores();
 }
 
-showHighScoresEl.classList.remove("hide");
-showInitialsEl.classList.add("hide"); //hide initials list just used to enter data
-showScores();
 
 //this starts at the very beginning for user to press Start Quiz button
 function showStart() {
+  location.reload();  //reload every time we start
   showStartEl.classList.remove("hide");
   showHighScoresEl.classList.add("hide");
   showInitialsEl.classList.add("hide");
@@ -209,6 +219,7 @@ function showStart() {
 
 function clearScores() {
   localStorage.clear();
+  location.reload(); //need to also refresh after clearing so seen by page right away
   showStart();
 }
 
@@ -225,3 +236,4 @@ submitScoresEl.addEventListener("click", saveScores);
 clearScoresEl.addEventListener("click", clearScores);
 goBackEl.addEventListener("click", showStart);
 // showHighScoresEl.addEventListener("click", showScores);
+highScoresLinkEl.addEventListener("click",showScores);
