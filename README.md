@@ -44,7 +44,7 @@ No installation is needed to use this application.
 ## Usage
 
 Click on the link below to use this application:<br>
-https://abrownstein2022.github.io/ch4-web-api-coding-quiz/
+https://abrownstein2022.github.io/web-api-coding-quiz/
 
 ```md
 This quiz displays 5 multiple choice questions on JavaScript with 4 possible choices.
