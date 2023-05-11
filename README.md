@@ -1,10 +1,10 @@
-# Rutgers Bootcamp Challenge 4 - JavaScript Quiz using Web APIs
+# JavaScript Coding Quiz using Web APIs
 
 ![license](https://img.shields.io/badge/license-MIT-black)
 ## Description
 
 ```md
-This website was created to test your JavaScript skills with a timed multiple choice test.
+This website was created to test your JavaScript coding skills with a timed multiple choice test.
 
 User Story:
 AS A coding boot camp student
